@@ -17,6 +17,7 @@ class UserController extends Controller
     public function getAll()
     {
         $users = DB::table('users')->get();
-        return view('page.user.home', ['users' => $users]);
+        $title = 'List user';
+        return view('page.user.home', compact('users', 'title'));
     }
 }
